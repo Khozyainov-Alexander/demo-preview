@@ -1,1 +1,123 @@
+import sys
+import winsound
+from random import randint
 
+
+
+print('========================= игра бомба =========================')
+
+def start():
+
+    print('Это игра "разминирование бомбы"')
+    print('Вам нужно угадать 2 числа')
+    print('как вас зовут?')
+    a = input()
+    print('хорошо,', a, 'готовы разминировать бомбу?')
+    print('тогда начнём')
+start()
+
+def number_one(count):
+
+
+
+    print('вам нужно угадать первое число. (от 0 до 9)')
+    print('У вас есть 5 попыток чтобы угадать это число')
+    bomb1 = randint(0, 10)
+    for i in range(1, 6):
+
+        bomb = int(input())
+
+
+        if bomb1 == bomb:
+            print('вы угадали первое число')
+            break
+
+        if bomb1 != bomb:
+            print('пока не вышло')
+            count -= 1
+            if count == 0:
+                print('BOOM!!!')
+                def play_sound(filename):
+                    winsound.PlaySound(filename, winsound.SND_FILENAME)
+
+                def main():
+                    sound_file = r"C:\Users\user\Documents\RPG music\zvuk-kogda-bomba-vzorvalas.wav"  # Укажите путь к звуковому файлу
+                    play_sound(sound_file)
+
+                if __name__ == "__main__":
+                    main()
+                sys.exit()
+        if bomb > 9 or bomb < 0 or bomb == '':
+            print('вы не читали правил')
+            print('вы труп!')
+            print('BOOM!!!')
+
+            def play_sound(filename):
+                winsound.PlaySound(filename, winsound.SND_FILENAME)
+
+            def main():
+                sound_file = r"C:\Users\user\Documents\RPG music\zvuk-kogda-bomba-vzorvalas.wav"  # Укажите путь к звуковому файлу
+                play_sound(sound_file)
+
+            if __name__ == "__main__":
+                main()
+            sys.exit()
+
+
+
+
+
+
+
+number_one(count=5)
+def number_two(count):
+
+    print('вам нужно угадать второе число. (от 0 до 9)')
+    print('У вас есть 5 попыток чтобы угадать это число')
+
+    bomb1 = randint(0, 10)
+    for i in range(1, 6):
+        bomb = int(input())
+
+        if bomb1 == bomb:
+            print('вы угадали второе число')
+            print('ВЫ РАЗМИНИРОВАЛИ БОМБУ!!!')
+            break
+
+        if bomb1 != bomb:
+                print('пока не вышло')
+                count -= 1
+                if count == 0:
+                     print('BOOM!!!')
+
+                     def play_sound(filename):
+                         winsound.PlaySound(filename, winsound.SND_FILENAME)
+
+                     def main():
+                         sound_file = r"C:\Users\user\Documents\RPG music\zvuk-kogda-bomba-vzorvalas.wav"  # Укажите путь к звуковому файлу
+                         play_sound(sound_file)
+
+                     if __name__ == "__main__":
+                         main()
+                     sys.exit()
+
+        if bomb > 9 or bomb < 0:
+            print('вы не читали правил')
+            print('вы труп!')
+            print('BOOM!!!')
+
+            def play_sound(filename):
+                winsound.PlaySound(filename, winsound.SND_FILENAME)
+
+            def main():
+                sound_file = r"C:\Users\user\Documents\RPG music\zvuk-kogda-bomba-vzorvalas.wav"  # Укажите путь к звуковому файлу
+                play_sound(sound_file)
+
+            if __name__ == "__main__":
+                main()
+            sys.exit()
+
+
+
+
+number_two(count=5)
